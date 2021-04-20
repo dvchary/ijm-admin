@@ -1,42 +1,42 @@
 import axios from "../helpers/axios";
-import { projectConstansts } from "./constants";
+import { masterConstansts } from "./constants";
 
-const getAllProject = () => {
+export const getAllMasters = () => {
   return async (dispatch) => {
-    dispatch({ type: projectConstansts.GET_ALL_PROJECT_REQUEST });
-    const res = await axios.get(`/project/getprojet`);
+    dispatch({ type: masterConstansts.GET_ALL_MASTER_REQUEST });
+    const res = await axios.get(`/masters/getmasters`);
     // console.log(res);
     if (res.status === 200) {
-      const { projectList } = res.data;
+      const { masterList } = res.data;
 
       dispatch({
-        type: projectConstansts.GET_ALL_PROJECT_SUCCESS,
-        payload: { projects: projectList }, //projectList is  the response from Backend
+        type: masterConstansts.GET_ALL_MASTER_SUCCESS,
+        payload: { masters: masterList }, //projectList is  the response from Backend
       });
     } else {
       dispatch({
-        type: projectConstansts.GET_ALL_PROJECT_FAILURE,
+        type: masterConstansts.GET_ALL_MASTER_FAILURE,
         payload: { error: res.data.error },
       });
     }
   };
 };
 
-export const addProject = (form) => {
+export const addMaster = (form) => {
   return async (dispatch) => {
-    dispatch({ type: projectConstansts.ADD_NEW_PROJECT_REQUEST });
+    dispatch({ type: masterConstansts.ADD_NEW_MASTER_REQUEST });
     try {
-      const res = await axios.post(`/project/create`, form);
-      console.log("addProject ", res);
+      const res = await axios.post(`/masters/create`, form);
+      // console.log("addProject ", res);
 
       if (res.status === 201) {
         dispatch({
-          type: projectConstansts.ADD_NEW_PROJECT_SUCCESS,
-          payload: { project: res.data.project }, //res.data.project is  the response from Backend
+          type: masterConstansts.ADD_NEW_MASTER_SUCCESS,
+          payload: { master: res.data.master }, //res.data.project is  the response from Backend
         });
       } else {
         dispatch({
-          type: projectConstansts.ADD_NEW_PROJECT_FAILURE,
+          type: masterConstansts.ADD_NEW_MASTER_FAILURE,
           payload: res.data.error,
         });
       }
@@ -84,4 +84,4 @@ export const addProject = (form) => {
 //   };
 // };
 
-export { getAllProject };
+// export { getAllMasters, addMaster };

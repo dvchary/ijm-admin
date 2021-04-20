@@ -25,7 +25,22 @@ const Layout = (props) => {
                   </NavLink>
                 </li>
                 <li>
+                  <NavLink to={`/masters`}>Masters</NavLink>
+                </li>
+                <li>
+                  <NavLink to={`/properties`}>Properties</NavLink>
+                </li>
+                <li>
                   <NavLink to={`/projects`}>Projects</NavLink>
+                </li>
+                <li>
+                  <NavLink to={`/blocks`}>Blocks</NavLink>
+                </li>
+                <li>
+                  <NavLink to={`/wings`}>Wings</NavLink>
+                </li>
+                <li>
+                  <NavLink to={`/floors`}>Floors</NavLink>
                 </li>
                 <li>
                   <NavLink to={`/units`}>Inventory</NavLink>

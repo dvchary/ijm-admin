@@ -22,6 +22,15 @@ const Header = (props) => {
     return (
       <Nav>
         <li className="nav-item">
+          <NavLink
+            to="enquiryform"
+            className="nav-link"
+            style={{ color: "#fff" }}
+          >
+            Enquiry Form
+          </NavLink>
+        </li>
+        <li className="nav-item">
           <span
             className="nav-link"
             onClick={logout}

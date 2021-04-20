@@ -123,6 +123,14 @@ const Projects = (props) => {
           ))}
         </select>
         <input type="file" name="prjImage" onChange={handlePrjImage} />
+        <Button
+          variant="primary"
+          style={{ backgroundColor: "darkblue" }}
+          className="btn-sm"
+          onClick={handleClose}
+        >
+          Save Changes
+        </Button>
       </Modal>
     </Layout>
   );

@@ -9,8 +9,14 @@ import "./App.css";
 import PrivateRoute from "./components/HOC/PrivateRoute";
 import { isUserLoggedIn, getInitialData } from "./actions";
 import Units from "./pages/Units";
-import Orders from "./pages/Orders";
+import Masters from "./pages/Masters";
 import Projects from "./pages/Projects";
+import Properties from "./pages/Properties";
+import Blocks from "./pages/Blocks";
+import Wings from "./pages/Wings";
+import Floors from "./pages/Floors";
+import Orders from "./pages/Orders";
+import Enquiryform from "./pages/Enquiryform";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +37,12 @@ function App() {
         <PrivateRoute path="/units" component={Units} />
         <PrivateRoute path="/orders" component={Orders} />
         <PrivateRoute path="/projects" component={Projects} />
+        <PrivateRoute path="/properties" component={Properties} />
+        <PrivateRoute path="/masters" component={Masters} />
+        <PrivateRoute path="/blocks" component={Blocks} />
+        <PrivateRoute path="/wings" component={Wings} />
+        <PrivateRoute path="/floors" component={Floors} />
+        <PrivateRoute path="/enquiryform" component={Enquiryform} />
 
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
